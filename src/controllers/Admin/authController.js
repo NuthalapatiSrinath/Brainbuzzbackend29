@@ -16,8 +16,8 @@ exports.loginAdmin = async (req, res) => {
         .json({ message: "Email and password are required" });
     }
 
-    const adminEmail = "admin@brainbuzz.com";
-    const adminPassword = "Admin@123";
+    const adminEmail = process.env.ADMIN_EMAIL;
+    const adminPassword = process.env.ADMIN_PASSWORD;
 
     if (!adminEmail || !adminPassword) {
       return res
